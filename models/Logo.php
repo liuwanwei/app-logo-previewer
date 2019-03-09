@@ -51,4 +51,14 @@ class Logo extends \yii\db\ActiveRecord
             'updatedAt' => '更新日期',
         ];
     }
+
+    public function afterDelete()
+    {
+        parent::afterDelete();
+
+        $path = Yii::getAlias('@webroot') . $this->url;
+        if (file_exists($path)) {
+            unlink($path);
+        }
+    }
 }

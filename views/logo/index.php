@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="logo-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php  ?>
 
     <p>
         <?= Html::a('添加图标', ['create'], ['class' => 'btn btn-success']) ?>
@@ -26,19 +26,25 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             // ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            // 'id',
             [
                 'attribute' => 'url',
+                'label' => '图标',
                 'format' => 'raw',
-                'value' => function($model){
-                    return Html::img($model->url, ['height' => '64px', 'weight' => '64px']);
+                'value' => function ($model) {
+                    return Html::a(Html::img($model->url, ['height' => '64px', 'weight' => '64px']), ['view', 'id' => $model->id]);
                 }
             ],
+            'appName',
+            'testName',
             'desc:ntext',
             'createdAt',
             'updatedAt',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{update} {delete}',
+            ],
         ],
     ]); ?>
-</div>
+</div> 
