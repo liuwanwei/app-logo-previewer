@@ -14,8 +14,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'logoFile')->fileInput() ?>
 
-    <?= $form->field($model, 'appName')->textInput(['maxLength' => true]) ?>
-
     <?= $form->field($model, 'testName')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'desc')->textarea(['rows' => 2]) ?>

@@ -11,6 +11,7 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'name' => '应用图标预览',
     'defaultRoute' => 'logo',
     'language' => 'zh-CN',
     'timeZone' => 'Asia/Shanghai',

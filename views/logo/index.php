@@ -13,12 +13,11 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="logo-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php  ?>
+    <h1><?= Html::encode($this->title) ?></h1>    
 
-    <p>
-        <?= Html::a('添加图标', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <?php echo $this->render('_search', ['model' => $searchModel]) ?>
+
+    <p></p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -35,9 +34,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     return Html::a(Html::img($model->url, ['height' => '64px', 'weight' => '64px']), ['view', 'id' => $model->id]);
                 }
             ],
-            'appName',
+            // 'appName',
             'testName',
-            'name',
+            // 'name',
             'desc:ntext',
             'createdAt',
             'updatedAt',
