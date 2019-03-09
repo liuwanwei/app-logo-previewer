@@ -37,6 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'appName',
             'testName',
+            'name',
             'desc:ntext',
             'createdAt',
             'updatedAt',

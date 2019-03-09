@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $model app\models\Logo */
 
 $this->title = 'Update Logo: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Logos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = ['label' => '图标管理', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="logo-update">

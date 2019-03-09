@@ -44,7 +44,8 @@ class Logo extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'url' => '网址',
-            'appName' => '应用',
+            'name' => '显示名称',
+            'appName' => '应用名称',
             'testName' => '测试名称',
             'desc' => '描述信息',
             'createdAt' => '添加日期',
@@ -59,6 +60,16 @@ class Logo extends \yii\db\ActiveRecord
         $path = Yii::getAlias('@webroot') . $this->url;
         if (file_exists($path)) {
             unlink($path);
+        }
+    }
+
+    public function getName(){
+        if (! empty($this->testName)) {
+            return $this->testName;
+        }else if (!empty($this->appName)){
+            return $this->appName;
+        }else {
+            return '测试图标-'.$this->id;
         }
     }
 }
