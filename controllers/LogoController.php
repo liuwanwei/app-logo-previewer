@@ -24,9 +24,10 @@ class LogoController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
+                'except' => ['view'],
                 'rules' => [
                     [
-                        'allow' => true,
+                        'allow' => true,                        
                         'roles' => ['@'],
                     ],
                 ],

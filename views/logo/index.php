@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="logo-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>    
+    <h1><?= Html::encode($this->title) ?></h1>
 
     <?php echo $this->render('_search', ['model' => $searchModel]) ?>
 
@@ -31,20 +31,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => '图标',
                 'format' => 'raw',
                 'value' => function ($model) {
-                    return Html::a(Html::img($model->url, ['height' => '64px', 'weight' => '64px']), ['view', 'id' => $model->id]);
-                }
-            ],
-            // 'appName',
-            'testName',
-            // 'name',
-            'desc:ntext',
-            'createdAt',
-            'updatedAt',
+                    $img = Html::img($model->url, ['height' => '64px', 'weight' => '64px']);
+                    return Html::a($img, ['view' , 'id' => $model->id], ['target' => '_blank']);
+    }
+    ],
+    // 'appName',
+    'testName',
+    // 'name',
+    'desc:ntext',
+    'createdAt',
+    'updatedAt',
 
-            [
-                'class' => 'yii\grid\ActionColumn',
-                'template' => '{update} {delete}',
-            ],
-        ],
-    ]); ?>
-</div> 
+    ['class' => 'yii\grid\ActionColumn',
+    'template' => '{update} {delete}',], ]]); ?>
+</div>

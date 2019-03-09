@@ -7,7 +7,6 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Logo */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => '应用图标', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
